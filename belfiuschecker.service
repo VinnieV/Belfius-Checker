@@ -1,0 +1,14 @@
+[Unit]
+Description=Belfius checker Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ubuntu
+ExecStart=/usr/bin/env python3 /home/ubuntu/belfiusChecker/belfiusChecker.py
+
+[Install]
+WantedBy=multi-user.target
